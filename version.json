@@ -1,5 +1,5 @@
 {
-  "version": "1.0.14",
+  "version": "1.0.15",
   "filename": "",
-  "description": "修复推理模型（MiniMax-M3 等）将 <think> 思考过程吐入回复正文的问题：统一回复清洗环节剥离 <think>...</think> 思考块。新增 UPDATE_URL 环境变量（读 .env）用于配置「检查更新」的远程 version.json 地址，适配 GitHub/Gitee 私有仓库场景。构建流程改为直接使用本仓库源码（GITHUB_TOKEN 拉取）+ 阿里云镜像源加速，不再依赖 Gitee 源码 clone。镜像版本提升至 1.0.14。"
+  "description": "修复更新执行器（update-runner）内的 docker-compose 独立二进制因架构命名错误（amd64/arm64 误用作发布资产名，正确应为 x86_64/aarch64）拉到 GitHub 404 页面、执行时报 Exec format error，导致网页「立即更新」与自动回滚均失败的问题；compose_prefix() 增加二进制可执行校验并自动回退。镜像版本提升至 1.0.15。"
 }
